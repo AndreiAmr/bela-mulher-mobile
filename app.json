@@ -1,27 +1,30 @@
 {
   "expo": {
-    "name": "bela-mulher-mobile",
-    "slug": "bela-mulher-mobile",
+    "name": "Bela Mulher",
+    "slug": "bela-mulher",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+    "experiments": {
+      "tsconfigPaths": true
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "orientation": "portrait",
+    "icon": "./src/assets/png/icon.png",
+    "userInterfaceStyle": "light",
+
+    "splash": {
+      "image": "./src/assets/png/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#1B2A3E"
+    },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/png/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "bela.mulher"
     },
     "web": {
       "favicon": "./assets/favicon.png"
