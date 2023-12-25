@@ -9,15 +9,17 @@
     "orientation": "portrait",
     "icon": "./src/assets/png/icon.png",
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./src/assets/png/splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#1B2A3E"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "bela.mulher"
     },
     "android": {
       "adaptiveIcon": {
