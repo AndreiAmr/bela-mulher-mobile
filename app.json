@@ -14,17 +14,15 @@
       "resizeMode": "cover",
       "backgroundColor": "#1B2A3E"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "bela.mulher"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/png/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./src/assets/png/icon.png",
+        "backgroundColor": "#1B2A3E"
       },
       "package": "bela.mulher"
     },

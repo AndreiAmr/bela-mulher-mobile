@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { Providers } from './src/Providers';
-import { Routes } from './src/routes';
+import { Routes } from '@routes/index';
 
 export default function App() {
   return (
