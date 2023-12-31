@@ -10,9 +10,14 @@
       "@screens/*": ["src/screens/*"],
       "@templates/*": ["src/templates/*"],
       "@utils/*": ["src/utils/*"],
-      "@stores/*": ["src/stores/*"],
+      "@store/*": ["src/infra/stores/*"],
       "@assets/*": ["src/assets/*"],
-      "@routes/*": ["src/routes/*"]
+      "@routes/*": ["src/infra/routes/*"],
+      "@services/*": ["src/infra/services/*"],
+      "@http/*": ["src/infra/http/*"],
+      "@hooks/*": ["src/infra/hooks/*"],
+      "@contexts/*": ["src/infra/contexts/*"],
+      "@types/*": ["src/types/*"]
     }
   },
   "exclude": [

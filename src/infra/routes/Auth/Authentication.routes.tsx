@@ -1,13 +1,13 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Login } from '../../templates/Auth/Login';
-import { LoginContextProvider } from 'src/contexts/Login/Login.context';
+import { LoginTemplate } from '@templates/Auth/Login';
+import { LoginContextProvider } from '@contexts/Login/Login.context';
 
 const Stack = createNativeStackNavigator();
 
 const LoginWrapper = () => {
   return (
     <LoginContextProvider>
-      <Login />
+      <LoginTemplate />
     </LoginContextProvider>
   );
 };
@@ -18,6 +18,7 @@ export const AuthenticationRoutes = () => {
       initialRouteName='Login'
       screenOptions={{
         headerShown: false,
+        animation: 'fade',
       }}
     >
       <Stack.Screen name='Login' component={LoginWrapper} />
