@@ -1,19 +1,37 @@
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
 
-import { LoginContext } from '@contexts/Login/Login.context';
 import { useLogin } from '@hooks/Auth/useLogin';
 
 import { Box, Text, VStack } from '@gluestack-ui/themed';
-import { Logo } from '@assets/svg/Logo';
-import { LoginForms } from '@organisms/LoginForms';
-import { Button } from '@atoms/Button';
-import { SignInIcon } from '@assets/svg/SignIn';
 import { KeyboardAvoidingView } from 'react-native';
 import { Modalize } from 'react-native-modalize';
+import { Logo } from '@assets/svg/Logo';
+import { LoginForms } from '@molecules/LoginForms';
+import { Button } from '@atoms/Button';
+import { SignInIcon } from '@assets/svg/SignIn';
+import { useAppStore } from '@store/app/app.store';
+import FSRegular from '@assets/fonts/FiraSans-Regular.ttf';
+import FSMedium from '@assets/fonts/FiraSans-Medium.ttf';
+import FSSemibold from '@assets/fonts/FiraSans-SemiBold.ttf';
+import FSBold from '@assets/fonts/FiraSans-Bold.ttf';
+import { useFonts } from 'expo-font';
 
 export const LoginMolecule = () => {
-  const { fontsLoaded } = useContext(LoginContext);
+  const [fontsLoaded] = useFonts({
+    Regular: FSRegular,
+    Medium: FSMedium,
+    Semibold: FSSemibold,
+    Bold: FSBold,
+  });
+
+  const { isFontsLoaded, setIsFontsLoaded } = useAppStore();
   const { items, handlers } = useLogin();
+
+  useEffect(() => {
+    if (fontsLoaded) {
+      setIsFontsLoaded(true);
+    }
+  }, [fontsLoaded]);
 
   return (
     <VStack
@@ -39,7 +57,7 @@ export const LoginMolecule = () => {
           borderRadius={10}
         >
           <Logo />
-          {fontsLoaded ? (
+          {isFontsLoaded ? (
             <LoginForms
               values={items.values}
               handleChange={handlers.handleChange}
@@ -49,18 +67,20 @@ export const LoginMolecule = () => {
             <></>
           )}
         </Box>
-        <Button
-          variant='full'
-          flexDirection='row'
-          onPress={() => handlers.handleSubmit()}
-        >
-          <Text color='white' fontFamily='Medium' fontSize={18}>
-            Acessar
-          </Text>
-          <Box position='absolute' right={23}>
-            <SignInIcon />
-          </Box>
-        </Button>
+        {isFontsLoaded && (
+          <Button
+            variant='full'
+            flexDirection='row'
+            onPress={() => handlers.handleSubmit()}
+          >
+            <Text color='white' fontFamily='Medium' fontSize={18}>
+              Acessar
+            </Text>
+            <Box position='absolute' right={23}>
+              <SignInIcon />
+            </Box>
+          </Button>
+        )}
       </KeyboardAvoidingView>
       <Modalize
         ref={items.modalizeRef}

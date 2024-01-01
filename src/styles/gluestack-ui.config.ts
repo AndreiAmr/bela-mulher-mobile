@@ -17,6 +17,8 @@ export const glueStackConfig = createConfig({
       green600: '#4B91F1',
 
       red800: '#DE5753',
+
+      yellow600: '#FFEC89',
     },
   },
 });
