@@ -1,4 +1,4 @@
-import { LoginMolecule } from '@molecules/Login';
+import { LoginMolecule } from '@organisms/Login';
 
 export const LoginTemplate = () => {
   return <LoginMolecule />;

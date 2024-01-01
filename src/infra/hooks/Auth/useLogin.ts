@@ -1,5 +1,3 @@
-// import { useUserStore } from '@stores/user/user.store';
-import axios from 'axios';
 import { useFormik } from 'formik';
 import { useRef, useState } from 'react';
 import { Modalize } from 'react-native-modalize';
@@ -27,8 +25,8 @@ export const useLogin = () => {
 
   const { values, errors, setFieldValue, handleSubmit, setErrors } = useFormik({
     initialValues: {
-      email: 'andreiamaral74@gmail.com',
-      password: 'amaral...',
+      email: 'milybarbosa2405@gmail.com',
+      password: 'camili@2',
     },
     onSubmit: async (values) => {
       try {
