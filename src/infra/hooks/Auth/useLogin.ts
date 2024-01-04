@@ -25,8 +25,8 @@ export const useLogin = () => {
 
   const { values, errors, setFieldValue, handleSubmit, setErrors } = useFormik({
     initialValues: {
-      email: 'milybarbosa2405@gmail.com',
-      password: 'camili@2',
+      email: 'andreiamaral74@gmail.com',
+      password: 'amaral...',
     },
     onSubmit: async (values) => {
       try {
@@ -37,6 +37,7 @@ export const useLogin = () => {
         const {
           response: { data },
         } = err as ErrorCustom;
+        console.log({ err });
 
         if (data.message === 'User not found') {
           setErrors({

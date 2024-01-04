@@ -1,6 +1,9 @@
 import { ChevronRightIcon } from '@assets/svg/ChevronRight';
+import { GraphIcon } from '@assets/svg/Graph';
+import { MoneyIcon } from '@assets/svg/Money';
 import { PlusIcon } from '@assets/svg/Plus';
 import { ButtonIcon } from '@atoms/ButtonIcon';
+import { CurrentProcedure } from '@atoms/CurrentProcedure';
 import { VStack } from '@gluestack-ui/themed';
 
 export const HomeActions = () => {
@@ -28,18 +31,20 @@ export const HomeActions = () => {
         />
       </VStack>
 
-      <VStack gap={15}>
+      <CurrentProcedure />
+
+      <VStack gap={15} marginTop={38}>
         <ButtonIcon
-          label='Cadastrar Novo Pacote'
+          label='Ver estimativas para hoje'
           onPress={() => {}}
-          iconLeft={<PlusIcon />}
+          iconLeft={<MoneyIcon />}
           iconRight={<ChevronRightIcon dark />}
           ligthBackground
         />
         <ButtonIcon
           label='Ver comparativos do mês'
           onPress={() => {}}
-          iconLeft={<PlusIcon />}
+          iconLeft={<GraphIcon />}
           iconRight={<ChevronRightIcon dark />}
           ligthBackground
         />

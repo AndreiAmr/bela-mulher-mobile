@@ -9,8 +9,8 @@ export const HomeOrganism = () => {
   return (
     <VStack flex={1} backgroundColor='$background'>
       <SafeAreaView style={{ flex: 1 }}>
+        <Header />
         <ScrollView>
-          <Header />
           <HomeActions />
           <HomeScheduleList />
         </ScrollView>

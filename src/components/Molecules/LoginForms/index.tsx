@@ -44,12 +44,14 @@ export const LoginForms = ({
 
       <VStack gap={14} width='100%' marginTop={50}>
         <Input
+          value={values.email}
           variant={errors?.email ? 'full-error' : 'full'}
           placeholder='E-mail'
           onChangeText={handleChange('email')}
         />
 
         <Input
+          value={values.password}
           variant={errors?.password ? 'full-error' : 'full'}
           placeholder='Senha'
           onChangeText={handleChange('password')}
